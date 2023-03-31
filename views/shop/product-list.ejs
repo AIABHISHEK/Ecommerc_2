@@ -1,0 +1,57 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="/css/product-card.css">
+<link rel="stylesheet" href="/css/style.css">
+
+<%- include('../includes/navigation.ejs') %>
+
+<main class="main-container">
+    <% console.log(typeof products) %>
+    <% if (products.length > 0) { %>
+        <!-- <h2>all products</h2> -->
+
+        <% for (let product of products) { %>
+            <div class="product-container">
+                <div class="product-image">
+                    <img src="/<%=product.imageUrl%>" alt="<%=product.title%>">
+                </div>
+                <div class="product-name">
+                    <%= product.title %>
+                </div>
+                <div class="product-info">
+                    <%=product.descProduct%>
+                </div>
+                <span> Rs <%= product.price %></span>
+                <a class="btn" href="/product-details/<%=product._id%>">Details</a>
+                <!-- <button></button> -->
+                
+                <button  type="">BUY</button>
+            </div>
+        <% } %>
+    
+    <% } else { %> 
+        <h2>No product</h2>
+    <% } %>
+</main>
+<section class="pagination">
+    <% if(currentPage != 1 && hasPreviousPage && currentPage - 1 != 1) { %>
+        <a href="?page=1">1</a>
+        <% } %> 
+    <% if(hasPreviousPage) { %>
+        <a href="?page=<%=currentPage - 1%> ">
+            <%=currentPage - 1%>
+        </a>
+        <% }%>
+    <a class="active" href="?page=<%=currentPage%> "><%=currentPage%></a>
+    <% if(hasNextPage) { %>
+        <a href="?page=<%=currentPage + 1%> ">
+            <%=currentPage + 1%>
+        </a>
+        <%  }%> 
+        <% if(currentPage != lastPage && lastPage != currentPage + 1 && lastPage) { %>
+        <a href="?page=<%=lastPage%> ">
+            <%=lastPage%>
+        </a>
+        <%  }%> 
+</section>
+<%- include('../includes/foot.ejs') %>

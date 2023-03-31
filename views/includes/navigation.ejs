@@ -1,0 +1,62 @@
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header-nav">
+            <ul class="header-nav-ul">
+                <li class="header-nav-ul-li"><a class="<%= path === '/' ? 'active':'' %>" href="/">Shop</a></li>
+
+
+
+                <li class="header-nav-ul-li"><a class="<%= path === '/product'? 'active':'' %>"
+                        href="/product">Products</a></li>
+                <% if(isLogged) { %>
+                    <li class="header-nav-ul-li">
+                        <a class="<%= path === '/cart'? 'active':'' %>" href="/cart">
+                            Cart
+                        </a>
+                    </li>
+                    <li class="header-nav-ul-li">
+                        <a class="<%= path === '/order' ? 'active':'' %>" href="/order">
+                            Orders
+                        </a>
+                    </li>
+
+                    <li class="header-nav-ul-li">
+                        <a class="<%= path === '/admin/edit-product' ? 'active':'' %>"
+                            href="/admin/edit-product">
+                            Add Product
+                        </a>
+                    </li>
+                    <li class="header-nav-ul-li">
+                        <a class="<%= path === '/admin/products' ? 'active' : '' %>" href="/admin/products">
+                            Admin Product
+                        </a>
+                    </li>
+                    <li class="header-nav-ul-li">
+                        <form action="/logout" method="post">
+                            <input type="hidden" name="_csrf" value="<%=csrfToken%>" >
+                                <button class="btn" type="submit">
+                                    logout
+                                </button>
+                        </form>
+                    </li>
+                <% } %>
+            </ul>
+            
+            <% if(!isLogged) { %>
+            <ul class="header-nav-ul  login-nav">
+                <li class="header-nav-ul-li">
+                    <a class="<%= path === '/login' ? 'active':'' %>" href="/login">
+                        Login
+                    </a>
+                </li>
+                <li class="header-nav-ul-li">
+                    <a class="<%= path === '/signUp' ? 'active':'' %>" href="/signUp">
+                        signUp
+                    </a>
+                </li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>

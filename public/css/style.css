@@ -1,0 +1,93 @@
+ html {
+     --scrollbarBG: #CFD8DC;
+     --thumbBG: #90A4AE;
+ }
+
+ body {
+     margin: 0px;
+     padding: 0px;
+     background-color: rgb(28, 25, 25);
+     background-image: url('/img/cornered-stairs.svg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+     color: rgb(11, 76, 55);
+     /* background-position: 100% 100%; */
+ }
+
+ body::-webkit-scrollbar {
+     width: 11px;
+ }
+
+ body {
+     scrollbar-width: thin;
+     scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+ }
+
+ body::-webkit-scrollbar-track {
+     background: var(--scrollbarBG);
+ }
+
+ body::-webkit-scrollbar-thumb {
+     background-color: var(--thumbBG);
+     border-radius: 6px;
+     border: 3px solid var(--scrollbarBG);
+ }
+
+ a {
+     all: unset;
+ }
+
+ main {
+     color: rgb(4, 49, 34);
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ ul {
+     margin-top: 0px;
+ }
+
+ .header {
+     background-color: rgb(233, 161, 122);
+     height: 40px;
+ }
+
+ .header-nav {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+ }
+
+ .header-nav-ul {
+     display: flex;
+     flex-direction: row;
+
+ }
+
+ .header-nav-ul li {
+     list-style: none;
+ }
+
+ .header-nav-ul-li {
+     margin: 8px;
+ }
+
+ .header-nav-ul-li a {
+     cursor: pointer;
+ }
+
+ /* .header-nav-ul-li a {
+     color: rgb(12, 32, 24);
+ } */
+
+ .header-nav-ul-li a:hover {
+     color: rgb(85, 226, 202);
+
+ }
+
+ .active {
+     color: rgb(231, 12, 154);
+ }

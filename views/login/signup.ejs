@@ -1,0 +1,26 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/add-product.css">
+
+    <%- include('../includes/navigation.ejs') %>
+
+        <main>
+            <% if(errorMessage) {%>
+                <div>
+                    <%=errorMessage%>
+                </div>
+                <% } %>
+            <form action="/signUp" method="post" class="form">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="" />
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" value="" />
+                <!-- step="0.001"  to support decimal number -->
+                <label for="confirmPassword"> Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" value="" />
+                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <button type="submit">Login</button>
+            </form>
+        </main>
+        <%- include('../includes/foot.ejs') %>
