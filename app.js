@@ -20,7 +20,7 @@ const errorPage = require('./controller/error');
 const database = require('./connection/database');
 const User = require('./models/user');
 
-const mongoConnect = database.mongoConnect;
+
 const app = express();
 
 
