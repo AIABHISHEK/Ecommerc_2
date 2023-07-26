@@ -32,6 +32,19 @@ const store = new mongoStore({
     uri: URL,
     collection: 'sessions'
 });
+// if (process.env.NODE_ENV === 'production') {
+//   // Set production environment variables here
+//   process.env.DB_HOST = 'production_db_host';
+//   process.env.API_KEY = 'production_api_key';
+// } else {
+//   // Set development environment variables here
+//   process.env.DB_HOST = 'development_db_host';
+//   process.env.API_KEY = 'development_api_key';
+// }
+
+// // Use the environment variables in your application
+// const dbHost = process.env.DB_HOST;
+// const apiKey = process.env.API_KEY;
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');    // by default it is views
