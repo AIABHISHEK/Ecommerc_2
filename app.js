@@ -153,7 +153,7 @@ app.use((error, req, res, next) => {
     console.log(error);
     res.redirect('/500');
 });
-
+const PORT = process.env.PORT || 3000;
 mongoose.connect(URL)
     .then((result) => {
         User.findOne()
